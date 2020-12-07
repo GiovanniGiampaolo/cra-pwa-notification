@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/cra-pwa-notification/public/static/css/main.ebaf2b34.chunk.css",
-    "main.js": "/cra-pwa-notification/public/static/js/main.a8801d0b.chunk.js",
-    "main.js.map": "/cra-pwa-notification/public/static/js/main.a8801d0b.chunk.js.map",
-    "runtime-main.js": "/cra-pwa-notification/public/static/js/runtime-main.c0b5eaab.js",
-    "runtime-main.js.map": "/cra-pwa-notification/public/static/js/runtime-main.c0b5eaab.js.map",
-    "static/js/2.f07a600d.chunk.js": "/cra-pwa-notification/public/static/js/2.f07a600d.chunk.js",
-    "static/js/2.f07a600d.chunk.js.map": "/cra-pwa-notification/public/static/js/2.f07a600d.chunk.js.map",
-    "static/js/3.e03b6b25.chunk.js": "/cra-pwa-notification/public/static/js/3.e03b6b25.chunk.js",
-    "static/js/3.e03b6b25.chunk.js.map": "/cra-pwa-notification/public/static/js/3.e03b6b25.chunk.js.map",
-    "index.html": "/cra-pwa-notification/public/index.html",
-    "service-worker.js": "/cra-pwa-notification/public/service-worker.js",
-    "service-worker.js.map": "/cra-pwa-notification/public/service-worker.js.map",
-    "static/css/main.ebaf2b34.chunk.css.map": "/cra-pwa-notification/public/static/css/main.ebaf2b34.chunk.css.map",
-    "static/js/2.f07a600d.chunk.js.LICENSE.txt": "/cra-pwa-notification/public/static/js/2.f07a600d.chunk.js.LICENSE.txt",
-    "static/media/App.css": "/cra-pwa-notification/public/static/media/background.3264a8c7.jpg"
+    "main.css": "/cra-pwa-notification/static/css/main.e8244bce.chunk.css",
+    "main.js": "/cra-pwa-notification/static/js/main.c8163a7e.chunk.js",
+    "main.js.map": "/cra-pwa-notification/static/js/main.c8163a7e.chunk.js.map",
+    "runtime-main.js": "/cra-pwa-notification/static/js/runtime-main.df293142.js",
+    "runtime-main.js.map": "/cra-pwa-notification/static/js/runtime-main.df293142.js.map",
+    "static/js/2.f07a600d.chunk.js": "/cra-pwa-notification/static/js/2.f07a600d.chunk.js",
+    "static/js/2.f07a600d.chunk.js.map": "/cra-pwa-notification/static/js/2.f07a600d.chunk.js.map",
+    "static/js/3.e03b6b25.chunk.js": "/cra-pwa-notification/static/js/3.e03b6b25.chunk.js",
+    "static/js/3.e03b6b25.chunk.js.map": "/cra-pwa-notification/static/js/3.e03b6b25.chunk.js.map",
+    "index.html": "/cra-pwa-notification/index.html",
+    "service-worker.js": "/cra-pwa-notification/service-worker.js",
+    "service-worker.js.map": "/cra-pwa-notification/service-worker.js.map",
+    "static/css/main.e8244bce.chunk.css.map": "/cra-pwa-notification/static/css/main.e8244bce.chunk.css.map",
+    "static/js/2.f07a600d.chunk.js.LICENSE.txt": "/cra-pwa-notification/static/js/2.f07a600d.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/cra-pwa-notification/static/media/background.3264a8c7.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.c0b5eaab.js",
+    "static/js/runtime-main.df293142.js",
     "static/js/2.f07a600d.chunk.js",
-    "static/css/main.ebaf2b34.chunk.css",
-    "static/js/main.a8801d0b.chunk.js"
+    "static/css/main.e8244bce.chunk.css",
+    "static/js/main.c8163a7e.chunk.js"
   ]
 }
