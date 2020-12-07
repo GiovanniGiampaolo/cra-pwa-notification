@@ -14,13 +14,15 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-image: url("./assets/background.jpg");
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+  background-position: center;
+  background-size: cover;
   color: white;
 }
 
@@ -36,3 +38,62 @@
     transform: rotate(360deg);
   }
 }
+
+.w3-jumbo {
+  font-size: 24px !important
+}
+
+.w3-animate-top {
+  position: relative;
+  animation: animatetop 0.4s
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0
+  }
+  to {
+    top: 0;
+    opacity: 1
+  }
+}
+
+.w3-display-middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+
+.w3-text-white, .w3-hover-text-white:hover {
+  color: #fff !important
+}
+
+.w3-animate-opacity {
+  animation: opac 0.8s
+}
+
+@keyframes opac {
+  from {
+    opacity: 0
+  }
+  to {
+    opacity: 1
+  }
+}
+
+.w3-tooltip, .w3-display-container {
+  position: relative
+}
+
+.w3-tooltip .w3-text {
+  display: none
+}
+
+.w3-tooltip:hover .w3-text {
+  display: inline-block
+}
+
