@@ -4,8 +4,21 @@ import './index.css';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
+import {messaging} from './init-fcm'
 
 navigator.serviceWorker.addEventListener("message", (message) => console.log(message));
+
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+        .register('./firebase-messaging-sw.js')
+        .then(function (registration) {
+            console.log('Registration successful, scope is:', registration.scope)
+            messaging.useServiceWorker(registration);
+        })
+        .catch(function (err) {
+            console.log('Service worker registration failed, error:', err)
+        })
+}
 
 ReactDOM.render(
   <React.StrictMode>
@@ -23,3 +36,4 @@ serviceWorkerRegistration.register();
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
