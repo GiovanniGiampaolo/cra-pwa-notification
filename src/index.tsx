@@ -10,8 +10,8 @@ navigator.serviceWorker.addEventListener("message", (message) => console.log(mes
 
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker
-        .register('./firebase-messaging-sw.js')
-        .then(function (registration) {
+        .register('./../public/firebase-messaging-sw')
+        .then(function (registration: ServiceWorkerRegistration) {
             console.log('Registration successful, scope is:', registration.scope)
             messaging.useServiceWorker(registration);
         })

@@ -1,18 +1,18 @@
 import React, {useEffect} from 'react'
 import './App.css'
 import {messaging} from './init-fcm.js'
+import SimpleDialog from './NotificationDialog'
 
 function App() {
 
     useEffect(() => {
-        messaging.requestPermission()
-            .then(async function () {
-                // eslint-disable-next-line
-                const token = await messaging.getToken()
+        messaging.getToken()
+            .then( () => {
+                const token = messaging.getToken()
+                console.log('Token', token)
             })
-            .catch(function (err: any) {
-                console.log('Unable to get permission to notify.', err)
-            })
+            .catch((err: any) => console.log('Unable to get permission to notify.', err))
+
         navigator.serviceWorker.addEventListener('message', (message) => console.log(message))
 
     }, [])
@@ -25,8 +25,9 @@ function App() {
                         <h5 className="w3-jumbo w3-animate-top">Notifica in arrivo</h5>
                     </div>
                 </div>
-
             </header>
+
+            <SimpleDialog/>
         </div>
     )
 }
