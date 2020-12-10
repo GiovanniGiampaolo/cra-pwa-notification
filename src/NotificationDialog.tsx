@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import Button from '@material-ui/core/Button'
 import Dialog from '@material-ui/core/Dialog'
 import DialogActions from '@material-ui/core/DialogActions'
@@ -8,7 +8,9 @@ import DialogTitle from '@material-ui/core/DialogTitle'
 
 export default function SimpleDialog() {
 
-    const [open, setOpen] = React.useState(true)
+    const [open, setOpen] = useState(false)
+
+    const [dialogData, setDialogData] = useState<any>(null)
 
     const handleClickOpen = () => {
         setOpen(true)
@@ -19,8 +21,17 @@ export default function SimpleDialog() {
     }
 
     useEffect(() => {
-        navigator.serviceWorker.addEventListener('message', (message) => console.log(message.data))
-    },[])
+        navigator.serviceWorker.addEventListener('message', (message: any) => setDialogData(message.data))
+    }, [])
+
+    useEffect(() => {
+        !!dialogData && setOpen(true)
+    },[dialogData])
+
+    const tovisualize = {
+        title: dialogData ? dialogData['firebase-messaging-msg-data']?.notification?.title : 'no-data',
+        desc: dialogData ? dialogData['firebase-messaging-msg-data']?.notification?.body : 'no-data'
+    }
 
     return (
         <div>
@@ -32,45 +43,23 @@ export default function SimpleDialog() {
                 keepMounted
                 onClose={handleClose}
             >
-                <DialogTitle id="alert-dialog-slide-title">{"TITLE"}</DialogTitle>
-                <DialogContent>
+                {tovisualize && <DialogTitle id="alert-dialog-slide-title">{tovisualize.title}</DialogTitle>}
+                {tovisualize && <DialogContent>
                     <DialogContentText id="alert-dialog-slide-description">
-                        CONTENT
+                        {tovisualize.desc}
                     </DialogContentText>
-                </DialogContent>
+                </DialogContent>}
 
                 <DialogActions>
-                    <Button variant={'contained'}onClick={handleClose} color="primary">
+                    <Button variant={'contained'} onClick={handleClose} color="primary">
                         Disagree
                     </Button>
 
-                    <Button variant={'contained'}onClick={handleClose} color="primary">
+                    <Button variant={'contained'} onClick={handleClose} color="primary">
                         Agree
                     </Button>
                 </DialogActions>
             </Dialog>
         </div>
-    );
-}
-
-
-const a = {
-    "firebase-messaging-msg-type": "push-msg-received",
-    "firebase-messaging-msg-data": {
-        "data": {
-            "gcm.n.e": "1",
-            "google.c.a.ts": "1607593474",
-            "google.c.a.udt": "0",
-            "google.c.a.e": "1",
-            "google.c.a.c_id": "6197527633312980929"
-        },
-        "from": "105560085884",
-        "priority": "high",
-        "notification": {
-            "title": "test",
-            "body": "test",
-            "tag": "campaign_collapse_key_6197527633312980929"
-        },
-        "collapse_key": "campaign_collapse_key_6197527633312980929"
-    }
+    )
 }
