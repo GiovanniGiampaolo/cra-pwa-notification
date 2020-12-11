@@ -12,10 +12,6 @@ export default function SimpleDialog() {
 
     const [dialogData, setDialogData] = useState<any>(null)
 
-    const handleClickOpen = () => {
-        setOpen(true)
-    }
-
     const handleClose = () => {
         setOpen(false)
     }
@@ -26,7 +22,7 @@ export default function SimpleDialog() {
 
     useEffect(() => {
         !!dialogData && setOpen(true)
-    },[dialogData])
+    }, [dialogData])
 
     const tovisualize = {
         title: dialogData ? dialogData['firebase-messaging-msg-data']?.notification?.title : 'no-data',
@@ -34,32 +30,23 @@ export default function SimpleDialog() {
     }
 
     return (
-        <div>
-            <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-                Slide in alert dialog
-            </Button>
-            <Dialog
-                open={open}
-                keepMounted
-                onClose={handleClose}
-            >
-                {tovisualize && <DialogTitle id="alert-dialog-slide-title">{tovisualize.title}</DialogTitle>}
-                {tovisualize && <DialogContent>
-                    <DialogContentText id="alert-dialog-slide-description">
-                        {tovisualize.desc}
-                    </DialogContentText>
-                </DialogContent>}
+        <Dialog
+            open={open}
+            keepMounted
+            onClose={handleClose}
+        >
+            {tovisualize && <DialogTitle id="alert-dialog-slide-title">{tovisualize.title}</DialogTitle>}
+            {tovisualize && <DialogContent>
+                <DialogContentText id="alert-dialog-slide-description">
+                    {tovisualize.desc}
+                </DialogContentText>
+            </DialogContent>}
 
-                <DialogActions>
-                    <Button variant={'contained'} onClick={handleClose} color="primary">
-                        Disagree
-                    </Button>
-
-                    <Button variant={'contained'} onClick={handleClose} color="primary">
-                        Agree
-                    </Button>
-                </DialogActions>
-            </Dialog>
-        </div>
+            <DialogActions>
+                <Button variant={'contained'} onClick={handleClose} color="primary">
+                    Chiudi
+                </Button>
+            </DialogActions>
+        </Dialog>
     )
 }
